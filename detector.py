@@ -9,5 +9,5 @@ def detector(level, raw, parameters):
     ema = raw[0]
     for value in raw[1:]:
         ema = alpha * value + (1-alpha) * ema
-    result = 1 if ema > threshold else 0
+    result = 1 if ema < threshold else 0
     return result, ema
